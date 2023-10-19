@@ -18,10 +18,19 @@ const logBetweenStepper = (min, max, step) => {
     return result;
 }
 
+const printReverse = (min, max) => {
+    let result = [];
+    if (max >= min) {
+        for (let i = max - 1; i > min; i--) {
+            result.push(i);
+        }
+    }
+    return result;
+}
 module.exports = {
     logBetween,
     logBetweenStepper,
-    // printReverse,
+    printReverse,
     // fizzBuzz,
     // isPrime,
     // maxValue,

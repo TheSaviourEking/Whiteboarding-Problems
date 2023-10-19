@@ -1,4 +1,5 @@
-const { logBetween,
+const {
+    logBetween,
     logBetweenStepper,
     printReverse,
     fizzBuzz,
@@ -88,7 +89,7 @@ describe('logBetweenStepper', function () {
 
 describe('printReverse', function () {
     it('should return an array of numbers from `min` to `max` in reverse order', function () {
-        expect(printReverse(13, 18)).to.deep.equal([17, 16.15, 14]);
+        expect(printReverse(13, 18)).to.deep.equal([17, 16, 15, 14]);
         expect(printReverse(90, 94)).to.deep.equal([93, 92, 91]);
     });
     it('should return an empty array if `min` is greater than `max`', function () {
