@@ -8,9 +8,19 @@ const logBetween = (lowNum, highNum) => {
     return result;
 }
 
+const logBetweenStepper = (min, max, step) => {
+    let result = [];
+    if (min <= max) {
+        for (let i = min; i <= max; i += step) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
 module.exports = {
     logBetween,
-    // logBetweenStepper,
+    logBetweenStepper,
     // printReverse,
     // fizzBuzz,
     // isPrime,

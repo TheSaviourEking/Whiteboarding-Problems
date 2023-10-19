@@ -131,8 +131,8 @@ describe('maxValue', function () {
 describe('myIndexOf', function () {
     it('should not call `Array.indexOf` or `Array.includes`', function () {
         // expect(fizzBuzz(20)).to.deep.equal([3, 5, 6, 9, 10, 12, 18]);
-        let indexOfSpy = chai.spy.on(Array, 'indexOf');
-        let includesSpy = chai.spy.on(Array, 'includes');
+        let indexOfSpy = chai.spy.on(Array.prototype, 'indexOf');
+        let includesSpy = chai.spy.on(Array.prototype, 'includes');
         myIndexOf([1, 2, 3, 4], 4);
         expect(indexOfSpy).to.not.have.been.called();
         expect(includesSpy).to.not.have.been.called();
