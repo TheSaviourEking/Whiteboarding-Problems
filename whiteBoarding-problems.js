@@ -339,20 +339,16 @@ const shortestWord = str => {
 }
 
 const greatestCommonFactor = (num1, num2) => {
-    // function gcd(a, b) {
-    //     // Base case
-    //     if (b === 0) return a;
-
-    //     // Recursive case
-    //     return gcd(b, a % b);
-    // }
-    // return gcd(n)
     if (num2 === 0) return num1;
     return greatestCommonFactor(num2, num1 % num2);
 }
 
+const isPassing = arr => {
+    let totalScores = arr.reduce((sum, obj) => sum + obj.score, 0);
+    return (totalScores / arr.length) >= 70;
+}
 
-console.log(shortestWord('app academy is cool'));
+console.log();
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -394,7 +390,7 @@ module.exports = {
     objectToString,
     shortestWord,
     greatestCommonFactor,
-    // isPassing,
+    isPassing,
     // valueConcat,
     // threeInArrow,
     // variableNameify,
