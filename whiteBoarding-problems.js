@@ -370,7 +370,6 @@ const variableNameify = arr => {
     arr[0] = arr[0].toLowerCase();
     for (let i = 1; i < arr.length; i++) {
         arr[i] = (arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase());
-        console.log(arr[i])
     }
     return arr.join('');
 }
@@ -384,7 +383,24 @@ const threeIncreasing = arr => {
     return false;
 }
 
-console.log(variableNameify(['MaX', 'VALUE']))
+const reverse2D = arr => {
+    // NOT SO EFFICIENT
+    // for (let i = 0; i < arr.length; i++) {
+    //     arr[i] = arr[i].reverse().join('');
+    // }
+    // return arr.reverse().join('');
+
+    // VERY EFFICIENT
+    // 800x faster than the first solution
+    return arr.map(subArr => Array.isArray(subArr) ? subArr.reverse().join('') : subArr).reverse().join('');
+}
+
+const arr1 = [
+    ['a', 'b', 'c', 'd'],
+    ['e', 'f'],
+    ['g', 'h', 'i']
+];
+console.log(reverse2D(arr1))
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -431,7 +447,7 @@ module.exports = {
     threeInARow,
     variableNameify,
     threeIncreasing,
-    // reverse2D,
+    reverse2D,
     // reverb,
     // countRepeats,
     // pairsToString,
