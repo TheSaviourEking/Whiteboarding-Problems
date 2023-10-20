@@ -44,7 +44,7 @@ module.exports = {
     logBetween,
     logBetweenStepper,
     printReverse,
-    // fizzBuzz,
+    fizzBuzz,
     // isPrime,
     // maxValue,
     // myIndexOf,
