@@ -314,7 +314,26 @@ const hipsterfyWord = str => {
 
 const hipsterfy = sentence => sentence.split(' ').map(word => hipsterfyWord(word)).join(' ');
 
-console.log(hipsterfy("proper"));
+const objectToString = obj => {
+    // PRIMITIVE METHOD
+    // let result = '';
+    // for (let key in obj) {
+    //     for (let i = 0; i < obj[key]; i++) {
+    //         result += key;
+    //     }
+    // }
+    // return result;
+
+    // FASTER AND MORE EFFICIENT METHOD
+    let result = '';
+    for (let key in obj) {
+        result += Array(obj[key]).fill(key).join('');
+    }
+    return result;
+}
+
+
+console.log(objectToString({ a: 2, b: 4, c: 1 }));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -353,7 +372,7 @@ module.exports = {
     lcm,
     hipsterfyWord,
     hipsterfy,
-    // objectToString,
+    objectToString,
     // shortestWord,
     // greatestCommonFactor,
     // isPassing,
