@@ -300,6 +300,18 @@ const lcm = (num1, num2) => {
     return (num1 * num2) / gcd(num1, num2);
 }
 
+const hipsterfyWord = str => {
+    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+    str =str.split('');
+    for (let i = str.length - 1; i >= 0; i--) {
+        if (VOWELS.includes(str[i].toLowerCase())) {
+            str[i] = '';
+            break;
+        }
+    }
+    return str.join('');
+}
+
 console.log(lcm(3, 2));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
@@ -337,7 +349,7 @@ module.exports = {
     longWordCount,
     factorial,
     lcm,
-    // hipsterfyWord,
+    hipsterfyWord,
     // hipsterfy,
     // objectToString,
     // shortestWord,
