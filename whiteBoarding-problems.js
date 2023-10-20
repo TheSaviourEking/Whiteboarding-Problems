@@ -290,11 +290,18 @@ const factorial = num => {
 }
 
 const lcm = (num1, num2) => {
-    if (num1 === num2) return num1;
-    
+    function gcd(a, b) {
+        // Base case
+        if (b === 0) return a;
+
+        // Recursive case
+        return gcd(b, a % b);
+    }
+    // return gcd(num1, num2);
+    return (num1 * num2) / gcd(num1, num2);
 }
 
-// console.log(arrayDiff(array1, array2));
+console.log(lcm(3, 2));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
