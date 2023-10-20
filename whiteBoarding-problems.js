@@ -375,6 +375,15 @@ const variableNameify = arr => {
     return arr.join('');
 }
 
+const threeIncreasing = arr => {
+    for (let i = 0; i < arr.length - 2; i++) {
+        if (arr[i + 1] === arr[i] + 1 && arr[i + 2] === arr[i] + 2) {
+            return true;
+        }
+    }
+    return false;
+}
+
 console.log(variableNameify(['MaX', 'VALUE']))
 // firstNPrimes(1);
 // console.log(countScores(peeps));
@@ -421,7 +430,7 @@ module.exports = {
     valueConcat,
     threeInARow,
     variableNameify,
-    // threeIncreasing,
+    threeIncreasing,
     // reverse2D,
     // reverb,
     // countRepeats,
