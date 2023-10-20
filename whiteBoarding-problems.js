@@ -333,16 +333,11 @@ const objectToString = obj => {
 }
 
 const shortestWord = str => {
-    str = str.split(' ');
-    let shortest = str[0];
-
-    for (let i = 1; i < str.length; i++) {
-        if (str[i].length < shortest.length) {
-            shortest = str[i];
-        }
-    }
-    return shortest;
+    return str.split(' ').reduce((shortest, current) => {
+        return current.length < shortest.length ? current : shortest;
+    });
 }
+
 
 
 console.log(shortestWord('app academy is cool'));
