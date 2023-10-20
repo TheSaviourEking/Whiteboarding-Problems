@@ -396,16 +396,16 @@ const reverse2D = arr => {
 }
 
 const reverb = str => {
-    const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
+    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
     let lastIndex = 0;
     for (let i = str.length - 1; i >= 0; i--) {
-        if (VOWELS.has(str[i])) {
+        if (VOWELS.includes(str[i])) {
             lastIndex = i;
             break;
         }
     }
 
-    return str + str.slice(lastIndex);
+    return str + str.slice(lastIndex)
 }
 
 
