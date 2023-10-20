@@ -366,7 +366,16 @@ const threeInARow = arr => {
     return false;
 }
 
-console.log(threeInARow([4, 3, 7, 7, 7, 13, 8]));
+const variableNameify = arr => {
+    arr[0] = arr[0].toLowerCase();
+    for (let i = 1; i < arr.length; i++) {
+        arr[i] = (arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase());
+        console.log(arr[i])
+    }
+    return arr.join('');
+}
+
+console.log(variableNameify(['MaX', 'VALUE']))
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -411,7 +420,7 @@ module.exports = {
     isPassing,
     valueConcat,
     threeInARow,
-    // variableNameify,
+    variableNameify,
     // threeIncreasing,
     // reverse2D,
     // reverb,
