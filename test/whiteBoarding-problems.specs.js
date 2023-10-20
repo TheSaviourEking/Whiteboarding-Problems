@@ -439,8 +439,8 @@ describe('objectToString', function () {
 
 describe('shortestWord', function () {
     it('should return the shortest word of a sentence', function () {
-        expect(shortestWord('app academy is cool')).to.be('is');
-        expect(shortestWord('programming bootcamp')).to.be('bootcamp');
+        expect(shortestWord('app academy is cool')).to.equal('is');
+        expect(shortestWord('programming bootcamp')).to.equal('bootcamp');
     });
 });
 

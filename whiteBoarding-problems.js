@@ -332,8 +332,20 @@ const objectToString = obj => {
     return result;
 }
 
+const shortestWord = str => {
+    str = str.split(' ');
+    let shortest = str[0];
 
-console.log(objectToString({ a: 2, b: 4, c: 1 }));
+    for (let i = 1; i < str.length; i++) {
+        if (str[i].length < shortest.length) {
+            shortest = str[i];
+        }
+    }
+    return shortest;
+}
+
+
+console.log(shortestWord('app academy is cool'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -373,7 +385,7 @@ module.exports = {
     hipsterfyWord,
     hipsterfy,
     objectToString,
-    // shortestWord,
+    shortestWord,
     // greatestCommonFactor,
     // isPassing,
     // valueConcat,
