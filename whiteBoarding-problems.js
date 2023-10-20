@@ -327,7 +327,7 @@ const objectToString = obj => {
     // FASTER AND MORE EFFICIENT METHOD
     let result = '';
     for (let key in obj) {
-        result += Array(obj[key]).fill(key).join('');
+        result += new Array(obj[key]).fill(key).join('');
     }
     return result;
 }
