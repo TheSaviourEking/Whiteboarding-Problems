@@ -37,7 +37,7 @@ const {
     greatestCommonFactor,
     isPassing,
     valueConcat,
-    threeInArrow,
+    threeInARow,
     variableNameify,
     threeIncreasing,
     reverse2D,

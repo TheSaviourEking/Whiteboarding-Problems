@@ -357,9 +357,16 @@ const valueConcat = (arr, obj) => {
     return arr;
 }
 
-const arr = ['alex', 'maurice', 'meagan', 'ali'];
-const obj = { alex: 'bronca', ali: 'harris' };
-console.log(valueConcat(arr, obj));
+const threeInARow = arr => {
+    for (let i = 1; i < arr.length - 1; i++) {
+        if (arr[i] === arr[i - 1] && arr[i] === arr[i + 1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(threeInARow([4, 3, 7, 7, 7, 13, 8]));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -403,7 +410,7 @@ module.exports = {
     greatestCommonFactor,
     isPassing,
     valueConcat,
-    // threeInArrow,
+    threeInARow,
     // variableNameify,
     // threeIncreasing,
     // reverse2D,
