@@ -338,6 +338,18 @@ const shortestWord = str => {
     });
 }
 
+const greatestCommonFactor = (num1, num2) => {
+    // function gcd(a, b) {
+    //     // Base case
+    //     if (b === 0) return a;
+
+    //     // Recursive case
+    //     return gcd(b, a % b);
+    // }
+    // return gcd(n)
+    if (num2 === 0) return num1;
+    return greatestCommonFactor(num2, num1 % num2);
+}
 
 
 console.log(shortestWord('app academy is cool'));
@@ -381,7 +393,7 @@ module.exports = {
     hipsterfy,
     objectToString,
     shortestWord,
-    // greatestCommonFactor,
+    greatestCommonFactor,
     // isPassing,
     // valueConcat,
     // threeInArrow,
