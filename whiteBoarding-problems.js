@@ -18,6 +18,7 @@ const logBetweenStepper = (min, max, step) => {
     return result;
 }
 
+// Return an array of numbers in reverse order from max -1 to min (exclusive)
 const printReverse = (min, max) => {
     let result = [];
     if (max >= min) {
