@@ -395,12 +395,21 @@ const reverse2D = arr => {
     return arr.map(subArr => Array.isArray(subArr) ? subArr.reverse().join('') : subArr).reverse().join('');
 }
 
-const arr1 = [
-    ['a', 'b', 'c', 'd'],
-    ['e', 'f'],
-    ['g', 'h', 'i']
-];
-console.log(reverse2D(arr1))
+const reverb = str => {
+    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+    let lastIndex = 0;
+    for (let i = str.length - 1; i >= 0; i--) {
+        if (VOWELS.includes(str[i])) {
+            lastIndex = i;
+            break;
+        }
+    }
+
+    return str + str.slice(lastIndex)
+}
+
+
+console.log(reverb('running'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -448,7 +457,7 @@ module.exports = {
     variableNameify,
     threeIncreasing,
     reverse2D,
-    // reverb,
+    reverb,
     // countRepeats,
     // pairsToString,
     // countAdjacentSums,
