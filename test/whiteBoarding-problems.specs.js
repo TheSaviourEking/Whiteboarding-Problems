@@ -474,9 +474,9 @@ describe('isPassing', function () {
 describe('valueConcat', function () {
     it('should take in an `array` and `object`, and return a new `array` where each element is concatenated with it\'s corresponding value from the object', function () {
         const arr = ['alex', 'maurice', 'meagan', 'ali'];
-        const obj = { alex: 'bronca', ali: 'harris' }
-        expect(valueConcat(arr, obj)).to.deep.equal(['alexbronca', 'maurice', 'meagan', 'aliha']);
-        expect(valueConcat(['a', 'b', 'c'], { b: 2, c: 3 })).to.equal(['a', 'b2', 'c3']);
+        const obj = { alex: 'bronca', ali: 'harris' };
+        expect(valueConcat(arr, obj)).to.deep.equal(['alexbronca', 'maurice', 'meagan', 'aliharris']);
+        expect(valueConcat(['a', 'b', 'c'], { b: 2, c: 3 })).to.deep.equal(['a', 'b2', 'c3']);
     });
 });
 

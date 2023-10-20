@@ -348,7 +348,18 @@ const isPassing = arr => {
     return (totalScores / arr.length) >= 70;
 }
 
-console.log();
+const valueConcat = (arr, obj) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] in obj) {
+            arr[i] += obj[arr[i]];
+        }
+    }
+    return arr;
+}
+
+const arr = ['alex', 'maurice', 'meagan', 'ali'];
+const obj = { alex: 'bronca', ali: 'harris' };
+console.log(valueConcat(arr, obj));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -391,7 +402,7 @@ module.exports = {
     shortestWord,
     greatestCommonFactor,
     isPassing,
-    // valueConcat,
+    valueConcat,
     // threeInArrow,
     // variableNameify,
     // threeIncreasing,
