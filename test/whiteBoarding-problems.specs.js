@@ -97,3 +97,9 @@ describe('printReverse', function () {
         expect(printReverse(90, 86)).to.deep.equal([]);
     });
 });
+
+describe('fizzBuzz', function () {
+    it('should return an array of every number from `0` to `max` that is divisible by `3` or `5`, but not both', function () {
+        expect(fizzBuzz(20)).to.deep.equal([3, 5, 6, 9, 10, 12, 18]);
+    });
+});

@@ -28,6 +28,18 @@ const printReverse = (min, max) => {
     }
     return result;
 }
+
+// Implement FizzBuzz and return an array of FizzBuzz values up to max (exclusive).
+const fizzBuzz = (max) => {
+    let result = [];
+    for (let i = 1; i < max; i++) {
+        if ((i % 3 === 0 || i % 5 === 0) && !(i % 3 === 0 && i % 5 === 0)) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
 module.exports = {
     logBetween,
     logBetweenStepper,
