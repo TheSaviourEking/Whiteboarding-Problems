@@ -302,7 +302,7 @@ const lcm = (num1, num2) => {
 
 const hipsterfyWord = str => {
     const VOWELS = ['a', 'e', 'i', 'o', 'u'];
-    str =str.split('');
+    str = str.split('');
     for (let i = str.length - 1; i >= 0; i--) {
         if (VOWELS.includes(str[i].toLowerCase())) {
             str[i] = '';
@@ -312,7 +312,9 @@ const hipsterfyWord = str => {
     return str.join('');
 }
 
-console.log(lcm(3, 2));
+const hipsterfy = sentence => sentence.split(' ').map(word => hipsterfyWord(word)).join(' ');
+
+console.log(hipsterfy("proper"));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -350,7 +352,7 @@ module.exports = {
     factorial,
     lcm,
     hipsterfyWord,
-    // hipsterfy,
+    hipsterfy,
     // objectToString,
     // shortestWord,
     // greatestCommonFactor,
