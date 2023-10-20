@@ -354,6 +354,11 @@ describe('nextTwoPrimes', function () {
 });
 
 describe('pairProduct', function () {
+    it('should not use for loops, only while loops', function () {
+        const funcString = pairProduct.toString();
+        expect(funcString.includes('for')).to.be.false;
+        expect(funcString.includes('while')).to.be.true;
+    })
     it('should accept an array of numbers `arr` and a target num `num`, and return pairs of indices whose elements multiply to `num`', function () {
         // NB: DON"T USE FOR LOOPS< ONLY WHILE LOOPS;
         expect(pairProduct([1, 2, 3, 4, 5], 4)).to.deep.equal([[0, 3]]);

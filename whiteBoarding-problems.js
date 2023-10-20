@@ -297,7 +297,6 @@ const lcm = (num1, num2) => {
         // Recursive case
         return gcd(b, a % b);
     }
-    // return gcd(num1, num2);
     return (num1 * num2) / gcd(num1, num2);
 }
 
