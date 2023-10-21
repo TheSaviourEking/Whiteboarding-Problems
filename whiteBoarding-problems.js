@@ -542,7 +542,18 @@ const commonPrimeFactors = (num1, num2) => {
     return result;
 }
 
-console.log(commonPrimeFactors(12, 50));
+const splitHalfArray = arr => {
+    let result = [[], []];
+    let half = Math.floor(arr.length / 2);
+    let starthalfIndex = arr.length % 2 === 0 ? half : half + 1;
+    for (let i = 0; i < half; i++) {
+        result[0].push(arr[i]);
+        result[1].push(arr[starthalfIndex + i]);
+    }
+    return result;
+}
+
+console.log(splitHalfArray(['a', 'b', 'c', 'd', 'e', 'f']));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -601,7 +612,7 @@ module.exports = {
     mindPsAndQs,
     commonFactors,
     commonPrimeFactors,
-    // splitHalfWay,
+    splitHalfArray,
     // threeUniqueVowels,
     // vowelShift,
     // hasSymmetry,

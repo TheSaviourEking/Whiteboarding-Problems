@@ -52,7 +52,7 @@ const {
     mindPsAndQs,
     commonFactors,
     commonPrimeFactors,
-    splitHalfWay,
+    splitHalfArray,
     threeUniqueVowels,
     vowelShift,
     hasSymmetry,
@@ -623,10 +623,10 @@ describe('commonPrimeFactors', function () {
     });
 });
 
-describe('splitHalfWay', function () {
+describe('splitHalfArray', function () {
     it('should take in an array and return 2 halves of the array split in the middle', function () {
-        expect(splitHalfArray([1, 2, 3, 4, 5])).to.equal([[1, 2], [4, 5]]);
-        expect(splitHalfArray(['a', 'b', 'c', 'd', 'e', 'f'])).to.equal([['a', 'b', 'c'], ['d', 'e', 'f']]);
+        expect(splitHalfArray([1, 2, 3, 4, 5])).to.deep.equal([[1, 2], [4, 5]]);
+        expect(splitHalfArray(['a', 'b', 'c', 'd', 'e', 'f'])).to.deep.equal([['a', 'b', 'c'], ['d', 'e', 'f']]);
     });
 });
 
