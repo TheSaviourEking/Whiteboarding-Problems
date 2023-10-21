@@ -469,8 +469,33 @@ const powerSequence = (base, length) => {
     return result;
 }
 
+const collapseString = str => {
+    // NAIVE APPROACH
+    // str = str.split(' ');
+    // let result = new Array(str.length);
+    // for (let i = 0; i < str.length; i++) {
+    //     let temp = '';
+    //     for (let j = 0; j < str[i].length; j++) {
+    //         if (str[i][j] !== str[i][j - 1]) {
+    //             temp += str[i][j]
+    //         }
+    //     }
+    //     // result.push()
+    //     result[i] = temp;
+    // }
+    // return result.join(' ');
 
-console.log(powerSequence(3, 4));
+    // MORE EFFICIENT APPROACH
+    return str.split(' ').map(element => {
+        return element.split('').filter((letter, index, self) => {
+            // if(element[index - 1] !== letter)
+            return element[index - 1] !== letter;
+        }).join('');
+    }).join(' ');
+}
+
+
+console.log(collapseString('hello app academy'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -524,7 +549,7 @@ module.exports = {
     countAdjacentSums,
     signFlipCount,
     powerSequence,
-    // collapseString,
+    collapseString,
     // oddWordsOut,
     // mindPsAndQs,
     // commonFactors,
