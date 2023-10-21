@@ -450,13 +450,17 @@ const countAdjacentSums = (arr, num) => {
     return count;
 }
 
-const array2 = [
-    ['f', 1],
-    ['o', 2],
-    ['d', 1],
-    ['!', 1]
-];
-console.log(pairsToString(array2));
+const signFlipCount = arr => {
+    let count = 0;
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i + 1] !== 0) {
+            if ((arr[i] < 0 && arr[i + 1] > 0) || (arr[i] > 0 && arr[i + 1] < 0)) count++;
+        }
+    }
+    return count;
+}
+
+console.log(signFlipCount([5, 6, 10, 3]));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -508,7 +512,7 @@ module.exports = {
     countRepeats,
     pairsToString,
     countAdjacentSums,
-    // signFlipCount,
+    signFlipCount,
     // powerSequence,
     // collapseString,
     // oddWordsOut,
