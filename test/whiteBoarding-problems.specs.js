@@ -56,6 +56,7 @@ const {
     threeUniqueVowels,
     vowelShift,
     hasSymmetry,
+    evenSumArray,
     numsToWords,
     moreDotLessDash
 } = require('../whiteBoarding-problems.js');

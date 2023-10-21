@@ -588,7 +588,24 @@ const hasSymmetry = arr => {
     return true;
 }
 
-console.log(hasSymmetry([1, 2, 3, 3, 2, 1]));
+const evenSumArray = arr => {
+    let result = new Array(arr.length);
+
+    function findEvenSum(num) {
+        let sum = 0;
+        for (let i = 2; i <= num; i += 2) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        result[i] = findEvenSum(arr[i]);
+    }
+    return result;
+}
+
+console.log(evenSumArray([6, 7, 5]));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -651,7 +668,7 @@ module.exports = {
     threeUniqueVowels,
     vowelShift,
     hasSymmetry,
-    // evenSumArray
+    evenSumArray,
     // numsToWords,
     // moreDotLessDash
 }
