@@ -553,7 +553,19 @@ const splitHalfArray = arr => {
     return result;
 }
 
-console.log(splitHalfArray(['a', 'b', 'c', 'd', 'e', 'f']));
+const threeUniqueVowels = str => {
+    let setStr = new Set(str.split(''));
+    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+    let count = 0;
+    for (let i = 0; i < VOWELS.length; i++) {
+        if (setStr.has(VOWELS[i])) {
+            count++;
+        }
+    }
+    return count >= 3;
+}
+
+console.log(threeUniqueVowels('delicious'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -613,7 +625,7 @@ module.exports = {
     commonFactors,
     commonPrimeFactors,
     splitHalfArray,
-    // threeUniqueVowels,
+    threeUniqueVowels,
     // vowelShift,
     // hasSymmetry,
     // numsToWords,
