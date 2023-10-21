@@ -551,7 +551,7 @@ describe('pairsToString', function () {
             ['d', 1],
             ['!', 1]
         ];
-        expect(pairsToString(array2)).to.equal('food');
+        expect(pairsToString(array2)).to.equal('food!');
     });
 });
 

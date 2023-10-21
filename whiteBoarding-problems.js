@@ -425,8 +425,30 @@ const countRepeats = str => {
     return count;
 }
 
+const pairsToString = arr => {
+    // Primitive way
+    // let object = {};
+    // for (let i = 0; i < arr.length; i++) {
+    //     object[arr[i][0]] = arr[i][1];
+    // }
 
-console.log(countRepeats('caaaalvin'));
+    // return objectToString(object);
+
+    // A more optimized solution
+    let result = '';
+    for (let i = 0; i < arr.length; i++) {
+        result += new Array(arr[i][1]).fill(arr[i][0]).join('');
+    }
+    return result;
+}
+
+const array2 = [
+    ['f', 1],
+    ['o', 2],
+    ['d', 1],
+    ['!', 1]
+];
+console.log(pairsToString(array2));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -476,7 +498,7 @@ module.exports = {
     reverse2D,
     reverb,
     countRepeats,
-    // pairsToString,
+    pairsToString,
     // countAdjacentSums,
     // signFlipCount,
     // powerSequence,
