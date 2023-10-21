@@ -578,7 +578,17 @@ const vowelShift = str => {
     return result.join('');
 }
 
-console.log(vowelShift('bootcamp'));
+const hasSymmetry = arr => {
+    let half = Math.floor(arr.length / 2);
+    for (let i = 0, lastIndex = arr.length - 1; i < half; i++, lastIndex--) {
+        if (arr[i] !== arr[lastIndex]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(hasSymmetry([1, 2, 3, 3, 2, 1]));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -640,7 +650,8 @@ module.exports = {
     splitHalfArray,
     threeUniqueVowels,
     vowelShift,
-    // hasSymmetry,
+    hasSymmetry,
+    // evenSumArray
     // numsToWords,
     // moreDotLessDash
 }
