@@ -565,7 +565,20 @@ const threeUniqueVowels = str => {
     return count >= 3;
 }
 
-console.log(threeUniqueVowels('delicious'));
+const vowelShift = str => {
+    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+    const result = new Array(str.length);
+    for (let i = 0; i < str.length; i++) {
+        if (VOWELS.includes(str[i])) {
+            result[i] = VOWELS[(VOWELS.indexOf(str[i]) + 1) % 5];
+        } else {
+            result[i] = str[i];
+        }
+    }
+    return result.join('');
+}
+
+console.log(vowelShift('bootcamp'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -626,7 +639,7 @@ module.exports = {
     commonPrimeFactors,
     splitHalfArray,
     threeUniqueVowels,
-    // vowelShift,
+    vowelShift,
     // hasSymmetry,
     // numsToWords,
     // moreDotLessDash
