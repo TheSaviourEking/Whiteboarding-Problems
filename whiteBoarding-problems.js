@@ -533,7 +533,16 @@ const commonFactors = (num1, num2) => {
     return result;
 }
 
-console.log(commonFactors(6, 24));
+const commonPrimeFactors = (num1, num2) => {
+    const result = [];
+    let greatestFactor = greatestCommonFactor(num1, num2);
+    for (let i = 2; i <= greatestFactor; i++) {
+        if (greatestFactor % i === 0 && isPrime(i)) result.push(i);
+    }
+    return result;
+}
+
+console.log(commonPrimeFactors(12, 50));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -591,7 +600,7 @@ module.exports = {
     oddWordsOut,
     mindPsAndQs,
     commonFactors,
-    // commonPrimeFactors,
+    commonPrimeFactors,
     // splitHalfWay,
     // threeUniqueVowels,
     // vowelShift,
