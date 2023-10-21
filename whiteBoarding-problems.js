@@ -623,10 +623,17 @@ const numsToWords = str => {
     }).join('');
 }
 
-console.log(numsToWords('42'));
-// firstNPrimes(1);
-// console.log(countScores(peeps));
-// console.log()
+const moreDotLessDash = str => {
+    let dotCount = 0;
+    let slashCount = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '.') dotCount++;
+        if (str[i] === '-') slashCount++;
+    }
+
+    return dotCount > slashCount;
+}
 
 module.exports = {
     logBetween,
@@ -688,5 +695,5 @@ module.exports = {
     hasSymmetry,
     evenSumArray,
     numsToWords,
-    // moreDotLessDash
+    moreDotLessDash
 }

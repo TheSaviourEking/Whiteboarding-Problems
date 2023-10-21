@@ -675,7 +675,7 @@ describe('numsToWords', function () {
 describe('moreDotLessDash', function () {
     it('should take in a string and return `true` if the string contains more dots(\'.\') than dashes, false otherwise', function () {
         expect(moreDotLessDash('2-D arrays are fun. I think.')).to.be.true;
-        expect(moreDotLessDash('.-.-.')).to.be.tru;
+        expect(moreDotLessDash('.-.-.')).to.be.true;
         expect(moreDotLessDash('.-')).to.be.false;
         expect(moreDotLessDash('..--')).to.be.false;
     });
