@@ -494,8 +494,34 @@ const collapseString = str => {
     }).join(' ');
 }
 
+const oddWordsOut = str => {
+    // Slower approach
+    // return str.split(' ').filter(word => word.length % 2 === 0).join(' ');
 
-console.log(collapseString('hello app academy'));
+    // had to use a for loop, because the higher order functions method proved 5 times slower
+    str = str.split(' ');
+    let result = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].length % 2 === 0) {
+            result.push(str[i]);
+        }
+    }
+    return result.join(' ');
+}
+co = str => {
+    str = str.split(' ');
+    let result = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].length % 2 === 0) {
+            result.push(str[i]);
+        }
+        // console.log(str[i]);
+    }
+    return result.join(' ');
+}
+
+
+console.log(oddWordsOut('go to the store and buy milk'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -550,7 +576,7 @@ module.exports = {
     signFlipCount,
     powerSequence,
     collapseString,
-    // oddWordsOut,
+    oddWordsOut,
     // mindPsAndQs,
     // commonFactors,
     // commonPrimeFactors,
