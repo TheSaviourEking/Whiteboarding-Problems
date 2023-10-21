@@ -178,7 +178,7 @@ const divisibleByThreePairSum = arr => {
 }
 
 const zipArray = (arr1, arr2) => {
-    for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    for (let i = 0; i < Math.min(arr1.length, arr2.length); i++) {
         arr1[i] = [arr1[i], arr2[i]]
     }
     return arr1;
