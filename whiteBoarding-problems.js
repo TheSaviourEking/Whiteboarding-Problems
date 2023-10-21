@@ -605,7 +605,25 @@ const evenSumArray = arr => {
     return result;
 }
 
-console.log(evenSumArray([6, 7, 5]));
+const numsToWords = str => {
+    const numObj = {
+        1: 'One',
+        2: 'Two',
+        3: 'Three',
+        4: 'Four',
+        5: 'Five',
+        6: 'Six',
+        7: 'Seven',
+        8: 'Eight',
+        9: 'Nine'
+    };
+
+    return str.split('').map(number => {
+        return numObj[number];
+    }).join('');
+}
+
+console.log(numsToWords('42'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -669,6 +687,6 @@ module.exports = {
     vowelShift,
     hasSymmetry,
     evenSumArray,
-    // numsToWords,
+    numsToWords,
     // moreDotLessDash
 }
