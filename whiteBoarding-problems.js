@@ -405,11 +405,28 @@ const reverb = str => {
         }
     }
 
-    return str + str.slice(lastIndex);
+    return lastIndex ? str + str.slice(lastIndex) : str;
+}
+
+const countRepeats = str => {
+    let repeats = {};
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] in repeats) {
+            if (repeats[str[i]] === 1) {
+                count++;
+            }
+            repeats[str[i]]++;
+        } else {
+            repeats[str[i]] = 1;
+        }
+    }
+
+    return count;
 }
 
 
-console.log(reverb('running'));
+console.log(countRepeats('caaaalvin'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -458,7 +475,7 @@ module.exports = {
     threeIncreasing,
     reverse2D,
     reverb,
-    // countRepeats,
+    countRepeats,
     // pairsToString,
     // countAdjacentSums,
     // signFlipCount,
