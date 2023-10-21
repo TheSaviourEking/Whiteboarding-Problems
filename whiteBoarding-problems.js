@@ -460,7 +460,17 @@ const signFlipCount = arr => {
     return count;
 }
 
-console.log(signFlipCount([5, 6, 10, 3]));
+const powerSequence = (base, length) => {
+    let result = new Array(length).fill(0);
+    result[0] = base;
+    for (let i = 1; i < length; i++) {
+        result[i] = result[i - 1] * base;
+    }
+    return result;
+}
+
+
+console.log(powerSequence(3, 4));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -513,7 +523,7 @@ module.exports = {
     pairsToString,
     countAdjacentSums,
     signFlipCount,
-    // powerSequence,
+    powerSequence,
     // collapseString,
     // oddWordsOut,
     // mindPsAndQs,
