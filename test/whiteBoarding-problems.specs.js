@@ -557,11 +557,9 @@ describe('pairsToString', function () {
 
 describe('countAdjacentSums', function () {
     it('should take an `array` and number `n`, it should return how many times that two adjacent numbers in an array add up to `n`', function () {
-        expect(signFlipCount([5, 6, 10, 3])).to.equal(0);
-        expect(signFlipCount([-12, 0, -3, -5])).to.equal(0);
-        expect(signFlipCount([-12, 10, -3, -5])).to.equal(2);
-        expect(signFlipCount([1, -2, -3, -4])).to.equal(1);
-        expect(signFlipCount([-1, 11.3, -3, 100])).to.equal(3);
+        expect(countAdjacentSums([1, 5, 1], 6)).to.equal(2);
+        expect(countAdjacentSums([7, 2, 4, 6], 7)).to.equal(0);
+        expect(countAdjacentSums([6, 7, 11, 2, 5, 10, 3], 13)).to.equal(3);
     });
 });
 

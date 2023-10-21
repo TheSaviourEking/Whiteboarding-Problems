@@ -442,6 +442,14 @@ const pairsToString = arr => {
     return result;
 }
 
+const countAdjacentSums = (arr, num) => {
+    let count = 0;
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + arr[i + 1] === num) count++;
+    }
+    return count;
+}
+
 const array2 = [
     ['f', 1],
     ['o', 2],
@@ -499,7 +507,7 @@ module.exports = {
     reverb,
     countRepeats,
     pairsToString,
-    // countAdjacentSums,
+    countAdjacentSums,
     // signFlipCount,
     // powerSequence,
     // collapseString,
