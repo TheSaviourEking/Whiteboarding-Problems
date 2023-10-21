@@ -509,11 +509,10 @@ const oddWordsOut = str => {
 }
 
 const mindPsAndQs = str => {
-    let values = new Set(["P", "Q"]);
     let currentStreak = 0;
     let longestStreak = 0;
     for (let i = 0; i < str.length; i++) {
-        if (values.has(str[i])) {
+        if (str[i] === 'P' || str[i] === 'Q') {
             currentStreak++;
             if (currentStreak > longestStreak) {
                 longestStreak = currentStreak;
