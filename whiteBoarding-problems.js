@@ -555,15 +555,17 @@ const splitHalfArray = arr => {
 
 const threeUniqueVowels = str => {
     let setStr = new Set(str.split(''));
-    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+    const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
     let count = 0;
-    for (let i = 0; i < VOWELS.length; i++) {
-        if (setStr.has(VOWELS[i])) {
+    for (let char of VOWELS) {
+        if (setStr.has(char)) {
             count++;
+            // setStr.delete(char);
+            if (count >= 3) return true;
         }
     }
-    return count >= 3;
-}
+    return false;
+};
 
 const vowelShift = str => {
     const VOWELS = ['a', 'e', 'i', 'o', 'u'];
