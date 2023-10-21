@@ -524,10 +524,16 @@ const mindPsAndQs = str => {
     return longestStreak;
 }
 
+const commonFactors = (num1, num2) => {
+    const result = [];
+    let greatestFactor = greatestCommonFactor(num1, num2);
+    for (let i = 1; i <= greatestFactor; i++) {
+        if (greatestFactor % i === 0) result.push(i)
+    }
+    return result;
+}
 
-console.log(mindPsAndQs('APCDQQPPC'));
-mindPsAndQs('APCDQQPPC') // 4
-console.log(mindPsAndQs('PPPXQPPPQ'));
+console.log(commonFactors(6, 24));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -584,7 +590,7 @@ module.exports = {
     collapseString,
     oddWordsOut,
     mindPsAndQs,
-    // commonFactors,
+    commonFactors,
     // commonPrimeFactors,
     // splitHalfWay,
     // threeUniqueVowels,
