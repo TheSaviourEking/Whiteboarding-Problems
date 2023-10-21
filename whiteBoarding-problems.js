@@ -488,8 +488,7 @@ const collapseString = str => {
     // MORE EFFICIENT APPROACH
     return str.split(' ').map(element => {
         return element.split('').filter((letter, index, self) => {
-            // if(element[index - 1] !== letter)
-            return element[index - 1] !== letter;
+            return self[index - 1] !== letter;
         }).join('');
     }).join(' ');
 }
@@ -508,20 +507,28 @@ const oddWordsOut = str => {
     }
     return result.join(' ');
 }
-co = str => {
-    str = str.split(' ');
-    let result = [];
+
+const mindPsAndQs = str => {
+    let values = new Set(["P", "Q"]);
+    let currentStreak = 0;
+    let longestStreak = 0;
     for (let i = 0; i < str.length; i++) {
-        if (str[i].length % 2 === 0) {
-            result.push(str[i]);
+        if (values.has(str[i])) {
+            currentStreak++;
+            if (currentStreak > longestStreak) {
+                longestStreak = currentStreak;
+            }
+        } else {
+            currentStreak = 0;
         }
-        // console.log(str[i]);
     }
-    return result.join(' ');
+    return longestStreak;
 }
 
 
-console.log(oddWordsOut('go to the store and buy milk'));
+console.log(mindPsAndQs('APCDQQPPC'));
+mindPsAndQs('APCDQQPPC') // 4
+console.log(mindPsAndQs('PPPXQPPPQ'));
 // firstNPrimes(1);
 // console.log(countScores(peeps));
 // console.log()
@@ -577,7 +584,7 @@ module.exports = {
     powerSequence,
     collapseString,
     oddWordsOut,
-    // mindPsAndQs,
+    mindPsAndQs,
     // commonFactors,
     // commonPrimeFactors,
     // splitHalfWay,
